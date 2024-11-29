@@ -1,0 +1,458 @@
+/* Hide all sections by default */
+.section {
+    display: none;
+}
+
+/* Show the active section */
+.section.active {
+    display: block;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    width:100%;
+    color: rgb(0, 39, 9);
+    background: #65aae6;
+}
+blockquote {
+    text-align: left;
+    font-style: italic; /* Makes the text italic */
+    font-size: small;
+    color: #000000; /* Text color */
+    border-left: 4px solid #007bff; /* Left border */
+    padding: 0; /* Space inside the blockquote */
+    border-radius: 5px; /* Rounded corners */
+}
+
+header {
+    background: linear-gradient(90deg, #4caf50, #81c784);
+    padding: 30px;
+    text-align: center;
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    top: 1px;
+    right: 20px;
+}
+
+.hamburger span {
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: #333;
+    margin: 5px ;
+}
+/* General Reset for Navigation */
+.navigation {
+    display: flex;
+    flex-direction: column;
+    background-color: #9ef299;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px; /* Adjust width based on design */
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.navigation.active {
+    transform: translateX(0);
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation li {
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.navigation li:last-child {
+    border-bottom: none;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navigation a:hover {
+    background-color: #81c784;
+    color: #fff;
+}
+
+
+
+/* Default Desktop Navigation */
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Menu Adjustments */
+@media (max-width: 768px) {
+    /* Show the hamburger menu on mobile */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide default navigation menu */
+    header nav ul {
+        display: none;
+    }
+
+    /* Navigation links will be vertically stacked */
+    .navigation ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Navigation links are larger and more clickable */
+    .navigation a {
+        font-size: 20px;
+        padding: 15px 20px;
+    }
+
+    /* The full-width of the mobile menu */
+    .navigation {
+        width: 100%;
+    }
+}
+
+/* Show Menu when Hamburger is clicked */
+@media (max-width: 768px) {
+    .navigation.active {
+        transform: translateX(0);
+    }
+}
+
+
+/* Navigation Menu (Initially hidden) */
+.navigation {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #9ef299;
+    border: 1px solid #91f5ca;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Menu (For Mobile: Stack items vertically) */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide default navigation menu */
+    }
+
+    .hamburger {
+        display: inline-block; /* Show hamburger icon for mobile */
+    }
+
+    .navigation {
+        position: fixed; /* Cover part of the screen */
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 70%; /* Adjust width for better usability */
+        background-color: #9ef299;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        transform: translateX(100%); /* Initially hidden */
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    .navigation.active {
+        transform: translateX(0); /* Slide in menu when active */
+    }
+
+    .navigation ul {
+        display: block; /* Stack items vertically */
+        padding: 0;
+        margin: 0;
+    }
+
+    .navigation li {
+        padding: 15px 0; /* Add spacing between items */
+        text-align: left; /* Align text to the left */
+    }
+
+    .navigation a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+    }
+}
+
+
+.navigation.active {
+    display: block;
+}
+
+/* Header Navigation */
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    padding: 50px;
+    color: rgb(1, 1, 14);
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: xx-large;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+/* Background Images */
+#home {
+    background: url('1st.jpg') no-repeat center center/cover;
+}   
+
+#login {
+    background: linear-gradient(rgba(212, 216, 203, 0.5), rgba(202, 227, 197, 0.5)),url('login.jpg') no-repeat center center/cover;
+    background-size: 120%;
+}
+
+#register {
+    background: linear-gradient(rgba(201, 177, 177, 0.5), rgba(225, 199, 199, 0.5)),url('2nd.jpg') no-repeat center center/cover;
+    color: rgb(1, 0, 0);
+}
+
+#consultation {
+    background: linear-gradient(rgba(183, 210, 240, 0.5), rgba(241, 236, 172, 0.445)),url('3rd.jpg') no-repeat center center/cover;
+}
+
+#medical-diary {
+    background: url('diary-bg.jpg') no-repeat center center/cover;
+}
+
+#prescriptions {
+    background: url('prescriptions-bg.jpg') no-repeat center center/cover;
+}
+
+#profile {
+    background: url('profile-bg.jpg') no-repeat center center/cover;
+}
+
+/* Form Styling */
+form {
+    background: rgba(120, 45, 219, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: auto;
+}
+
+form label, form input, form button {
+    display: block;
+    margin: 10px auto;
+    font-size: 16px;
+    width: 80%;
+}
+
+form input, form button {
+    padding: 10px;
+}
+
+form button {
+    background: #4caf50;
+    border: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background: #45a049;
+}
+
+/* Mobile Menu Adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide default navigation menu */
+    }
+}
+/* Chatbot Launcher */
+#chatbot-launcher {
+    position: right-down;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#chatbot-launcher:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+#chatbot-launcher img {
+    width: 50%;
+    height: 50%;
+}
+
+/* Chatbot Container */
+#chatbot {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+/* Hidden State */
+.hidden {
+    display: none;
+}
+
+/* Chat Header */
+#chat-header {
+    background: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Chat Body */
+#chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background: #f9f9f9;
+}
+
+/* Messages */
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.message.user {
+    align-self: flex-end;
+    background: #4caf50;
+    color: white;
+}
+
+.message.bot {
+    align-self: flex-start;
+    background: #e5e5e5;
+    color: #333;
+}
+
+/* Chat Input */
+#chat-input {
+    display: flex;
+    padding: 10px;
+    background: #f1f1f1;
+    border-top: 1px solid #ddd;
+}
+
+#chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#chat-input button {
+    padding: 10px 20px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#chat-input button:hover {
+    background: #45a049;
+}
+
